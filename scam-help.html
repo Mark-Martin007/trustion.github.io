@@ -3,189 +3,143 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Scam Help Checklist — immediate steps after a scam, account security, device cleanup, and reporting guidance (USA & Canada)." />
   <title>Scam Help Checklist | Trustion Security and Recovery</title>
+  <meta name="description" content="Immediate scam help: what to do after a scam, account/device security, evidence, and recovery steps. USA & Canada." />
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <style>
     :root{
-      --bg:#070B18; --panel:#0B1230; --panel2:#0E1A3D;
-      --text:#EAF0FF; --muted:#B7C3E6;
-      --brand:#6EA8FF; --brand2:#7CFFDA; --warning:#FFD36E;
-      --border:rgba(255,255,255,.12); --shadow: 0 18px 40px rgba(0,0,0,.35);
-      --radius:18px; --max:980px;
+      --bg: #091028;
+      --accent1: #6EA8FF;
+      --accent2: #7CFFDA;
+      --surface: #172042;
+      --surface2: #182A4E;
+      --border: rgba(255,255,255,.10);
+      --text: #EAF0FF;
+      --text-muted: #B7C3E6;
+      --shadow: 0 10px 34px rgba(30,55,130,.14);
+      --radius: 18px;
+      --max: 780px;
     }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background:
-        radial-gradient(1000px 420px at 10% 0%, rgba(110,168,255,.18), transparent 60%),
-        radial-gradient(1000px 520px at 85% 10%, rgba(124,255,218,.10), transparent 60%),
-        var(--bg);
-      color:var(--text);
-      line-height:1.6;
+    *{box-sizing:border-box;}
+    body {margin:0; font-family:'Segoe UI',system-ui,sans-serif; background:var(--bg); color:var(--text);}
+    a {color:var(--accent1); text-decoration:none;}
+    a:hover{color:var(--accent2);}
+    .header {
+      background:rgba(17,21,40,.97);backdrop-filter:blur(9px);position:sticky;top:0;z-index:10;
+      border-bottom:1px solid var(--border);
     }
-    a{color:inherit; text-decoration:none}
-    header{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(14px);
-      background: rgba(7,11,24,.55);
-      border-bottom:1px solid rgba(255,255,255,.08);
-    }
-    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
-    .nav{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 0}
-    .brand{display:flex; align-items:center; gap:12px; font-weight:900}
-    .brand img{width:38px; height:38px}
-    .brand small{display:block; font-weight:650; color:var(--muted); margin-top:2px}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:10px 14px; border-radius:14px;
-      border:1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.06);
-      font-weight:800; font-size:14px;
-    }
-    .btn.primary{
-      border:0; color:#081027;
-      background: linear-gradient(135deg, rgba(110,168,255,1), rgba(124,255,218,1));
-      box-shadow: 0 14px 30px rgba(110,168,255,.16);
-    }
-    main{padding:34px 0 44px}
-    .card{
-      background: linear-gradient(180deg, rgba(11,18,48,.92), rgba(14,26,61,.78));
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:18px;
-    }
-    h1{margin:10px 0 8px; font-size:34px; letter-spacing:-.02em; line-height:1.1}
-    .lead{margin:0 0 14px; color:var(--muted); font-weight:650}
-    h2{margin:18px 0 8px; font-size:20px}
-    ul{margin:0; padding-left:18px; color:var(--muted); font-weight:650}
-    li{margin:8px 0}
-    .grid{display:grid; grid-template-columns:1fr; gap:14px}
+    .nav {display:flex;align-items:center;justify-content:space-between;padding:11px 18px;}
+    .nav-left{display:flex;align-items:center;gap:12px;}
+    .logoimg{width:38px;height:38px;border-radius:10px;}
+    .brand-text{font-weight:900;font-size:1.23rem}
+    .btn-main{background:linear-gradient(95deg,var(--accent1),var(--accent2));color:#091028;font-weight:800;border:0;border-radius:12px;padding:8px 14px;box-shadow:0 2px 8px rgba(110,168,255,.12);}
+    .btn-main:hover{color:#fff;background:linear-gradient(92deg,var(--accent2),var(--accent1));}
+    @media(max-width:600px){.brand-text{display:none;}}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 9px;}
+    .card{background:linear-gradient(115deg,var(--surface),var(--surface2) 80%);border-radius:var(--radius);padding:26px 18px;box-shadow:var(--shadow);border:1px solid var(--border);}
+    h1{margin:22px 0 13px 0;font-size:2.1rem;line-height:1.08;font-weight:900;}
+    .lead{color:var(--text-muted);font-size:1.15rem;margin-bottom:16px;}
     .note{
-      margin-top:12px;
-      padding:12px 14px;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,211,110,.06);
-      color: rgba(234,240,255,.92);
-      font-weight:650;
-    }
-    .two{
-      display:grid; grid-template-columns: 1fr 1fr; gap:14px;
-    }
-    .tiny{font-size:12.5px; color: rgba(183,195,230,.86)}
-    @media (max-width: 860px){ .two{grid-template-columns:1fr} }
+      background:rgba(110,168,255,.07);border-left:5px solid var(--accent1);color:#EAF0FF;
+      border-radius:12px;padding:12px 16px;margin:18px 0 16px 0;font-weight:600;}
+    .section2{margin:34px 0 0 0;display:grid;gap:20px;}
+    .step-card{background:linear-gradient(122deg,#19234a 72%,#112343);border-radius:14px;box-shadow:0 4px 11px rgba(40,54,100,.07);padding:20px 17px 15px 19px; border:1px solid var(--border);}
+    h2{margin:0 0 8px 0; font-size:1.21rem;}
+    ul{margin:0 0 3px 15px; color:var(--text-muted);}
+    li{margin:8px 0;}
+    .call-box{background:var(--accent2);color:#091028;font-weight:900;font-size:1.19rem;margin:24px 0 6px 0;padding:10px 18px;border-radius:18px;box-shadow:0 1px 6px rgba(110,168,255,.08);}
+    .gotomain{text-align:center;margin:28px 0;}
+    .gotomain a{color:#fff;background:var(--accent1);border-radius:999px;padding:10px 18px;font-weight:900;box-shadow:0 1.5px 7px rgba(110,168,255,.10);}
+    .tiny{font-size:12.5px; color:var(--text-muted); margin-top:22px;}
+    .fadein{opacity:0;transform:translateY(22px);transition:.6s;}
+    .fadein.visible{opacity:1;transform:none;}
   </style>
 </head>
 <body>
-<header>
-  <div class="wrap">
-    <div class="nav">
-      <a class="brand" href="index.html">
-        <img src="logo-trustion.svg" alt="Trustion logo">
-        <div>
-          Trustion Security and Recovery
-          <small>Scam Help Checklist • USA & Canada</small>
-        </div>
-      </a>
-      <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end">
-        <a class="btn" href="index.html#pricing">Pricing</a>
-        <a class="btn" href="tel:+18446772312">Call: +1 844 677 2312</a>
-        <a class="btn primary" href="index.html#contact">Get Help Now</a>
-      </div>
+<div class="header">
+  <div class="nav">
+    <div class="nav-left">
+      <img src="logo-trustion.svg" alt="Trustion logo" class="logoimg">
+      <span class="brand-text">Trustion Security and Recovery</span>
+    </div>
+    <div>
+      <a href="index.html" class="btn-main">← Main Site</a>
     </div>
   </div>
-</header>
+</div>
 <main>
   <div class="wrap">
-    <div class="card">
-      <h1>Scammed? Do These Steps First (Checklist)</h1>
-      <p class="lead">
-        This checklist helps you act quickly, secure your accounts/devices, and follow proper reporting/dispute steps.
-        If you need remote help now, call <a href="tel:+18446772312"><strong>+1 844 677 2312</strong></a>.
-      </p>
-
+    <div class="card fadein" style="margin-top:28px;">
+      <h1>Scam Help Checklist</h1>
+      <div class="lead">If you think you’ve been scammed, don’t panic—follow these exact steps to limit the damage and boost your chance of recovery. <span style="display:block;color:var(--accent2);margin-top:10px;">Need step-by-step remote help? <a href="tel:+18446772312"><b>Call: +1 844 677 2312</b></a></span></div>
       <div class="note">
-        <strong>Important:</strong> We provide technical support and guidance. We do not guarantee recovery of funds—outcomes depend on banks, platforms, and official processes.
+        <strong>We provide technical and evidence support. We do not guarantee money recovery—results depend on banks/platforms and reporting quickly. 
+        Read this checklist even if you have already taken action!</strong>
       </div>
     </div>
-
-    <div class="grid" style="margin-top:14px">
-      <div class="two">
-        <div class="card">
-          <h2>1) Stop the damage (first 10–30 minutes)</h2>
-          <ul>
-            <li>If you gave remote access: disconnect the session, turn off Wi‑Fi, and shut down the device if needed.</li>
-            <li>If you shared passwords: change them immediately (start with email + banking).</li>
-            <li>Enable MFA (two‑factor) on email, banking, and social accounts.</li>
-            <li>Check account recovery settings (backup email/phone) and remove anything unfamiliar.</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h2>2) Contact your bank/card/platform</h2>
-          <ul>
-            <li>Call your bank/card issuer and report fraud.</li>
-            <li>Ask about dispute/chargeback options and timelines.</li>
-            <li>If it was a wire/transfer, report it immediately (time matters).</li>
-            <li>If it was crypto, report to the exchange/platform and preserve wallet/transaction IDs.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="two">
-        <div class="card">
-          <h2>3) Preserve evidence (don’t delete)</h2>
-          <ul>
-            <li>Save screenshots of chats, emails, and webpages.</li>
-            <li>Record transaction IDs, dates/times, amounts, and recipient details.</li>
-            <li>Keep phone numbers, email addresses, wallet IDs, and any “support ticket” numbers.</li>
-            <li>Write a short timeline: what happened, when, and what you shared/installed.</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h2>4) Clean and secure your device</h2>
-          <ul>
-            <li>Remove suspicious programs and browser extensions.</li>
-            <li>Run reputable malware scans and verify system settings.</li>
-            <li>Update OS and apps; patch the browser.</li>
-            <li>Check startup apps, remote access tools, and admin accounts.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>5) Watch for follow‑up scams</h2>
+    <div class="section2">
+      <div class="step-card fadein">
+        <h2>1) Stop Further Damage <span style="color:var(--accent2);font-size:1.22em">🛑</span></h2>
         <ul>
-          <li>Be cautious of “recovery agents” who promise guaranteed refunds.</li>
-          <li>Don’t pay upfront fees to “unlock” your money.</li>
-          <li>Verify official numbers and URLs (don’t trust links in emails/texts).</li>
-          <li>Expect scammers to try again once they know you’re a target.</li>
+          <li>Close your browser and any remote desktop apps (like AnyDesk, TeamViewer, etc).</li>
+          <li>Shut down internet if a criminal is still connected.</li>
+          <li>Immediately change passwords on email, banking, and key accounts from another clean device if possible.</li>
+          <li>Turn on 2FA/MFA on major accounts.</li>
         </ul>
-        <div class="note" style="background: rgba(110,168,255,.07)">
-          <strong>If you’re unsure:</strong> call Trustion and we’ll guide you through safe next steps remotely.
-        </div>
       </div>
-
-      <div class="card">
-        <h2>What to have ready when you call</h2>
+      <div class="step-card fadein">
+        <h2>2) Contact Banks & Platforms <span style="color:var(--accent1);font-size:1.15em">💳</span></h2>
         <ul>
-          <li>Device type (Windows/macOS) and what you’re seeing</li>
-          <li>Approx. time/date of the incident</li>
-          <li>Transaction reference(s), platform used, and any chat/email proof</li>
+          <li>Call your bank/credit card company and report the scam—ask about disputes and freezing transactions.</li>
+          <li>If wire or crypto: contact the platform or exchange urgently. Copy all transaction IDs now.</li>
+          <li>Use only official phone numbers/websites (never links sent by scammers).</li>
         </ul>
-        <p class="tiny" style="margin-top:10px">
-          © <span id="year"></span> Trustion Security and Recovery.
-        </p>
+      </div>
+      <div class="step-card fadein">
+        <h2>3) Gather & Save Evidence <span style="color:var(--accent1);font-size:1.22em">📁</span></h2>
+        <ul>
+          <li>Screenshot all relevant emails, chats, or receipts.</li>
+          <li>Note exact times, sums, transaction numbers, the criminal's details (phone/email/wallet), and what you shared.</li>
+          <li>Do <b>not</b> delete communication—save it.</li>
+        </ul>
+      </div>
+      <div class="step-card fadein">
+        <h2>4) Secure Your Devices <span style="color:var(--accent2);font-size:1.18em">🔒</span></h2>
+        <ul>
+          <li>Run a full malware/virus scan.</li>
+          <li>Remove any unusual apps or browser extensions.</li>
+          <li>Update your operating system and all apps.</li>
+          <li>If in doubt—get professional remote help.</li>
+        </ul>
+      </div>
+      <div class="step-card fadein">
+        <h2>5) Watch for Follow-Up Scams <span style="color:var(--accent1);font-size:1.1em">🚨</span></h2>
+        <ul>
+          <li>Don’t pay “guaranteed recovery agents” who ask for money upfront.</li>
+          <li>Be skeptical of calls/emails claiming to be law enforcement or “refund” offers.</li>
+          <li>Verify any number using the institution’s real website (never from the scammer’s message).</li>
+        </ul>
+      </div>
+      <div class="call-box fadein">
+        Need live help? <a href="tel:+18446772312" style="color:inherit;font-weight:900;">+1 844 677 2312</a>
       </div>
     </div>
+    <div class="gotomain fadein"><a href="index.html">← Return to Main Site</a></div>
+    <div class="tiny">&copy; <span id="year"></span> Trustion Security and Recovery. This page is informational and not financial or legal advice.</div>
   </div>
 </main>
-
 <script>
+  // Fade in on scroll
+  function fadeSection() {
+    var faders=document.querySelectorAll('.fadein');
+    var trigger=window.innerHeight*0.96;
+    faders.forEach(el=>{
+      var box=el.getBoundingClientRect();
+      if(box.top<trigger) el.classList.add("visible");
+    });
+  }
+  window.addEventListener("scroll",fadeSection);
+  window.addEventListener("load",fadeSection);
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 </body>
